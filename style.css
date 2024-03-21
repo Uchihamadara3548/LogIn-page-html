@@ -6,6 +6,19 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: scroll;
+}
+
+#main{
+    margin: 0;
+    top: 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
 }
 
@@ -38,10 +51,11 @@ video{
     width: 100%;
     height: 100%;
     top: 0;
-   transform: translatey(1.5%);
+   transform: translatey(-1.9%) scale(1.2,1.2);
     overflow: hidden;
     z-index: -1;
 }
+
 
 
 #div2{
@@ -49,12 +63,12 @@ video{
     border-radius: 10px;
     background:  transparent; 
     backdrop-filter: blur(5px);
-    width: 70%;
-    height: auto;
+    width: 40%;
+    height: 25%;
     margin: 0;
-    padding: 10% 0;
+    padding: 15% 15%;
     display: flex;
-    position: relative;
+    position: absolute;
     justify-content: center;
     align-items: center;
     overflow: hidden;
@@ -70,8 +84,10 @@ h1{
 
 
 input{
+    margin: 0 auto;
     background: transparent;
-    width: 100%;
+    color: white;
+    width: 190px;
     border: none;
     border-bottom: 2px solid
     white;
@@ -101,9 +117,70 @@ input:focus{
 footer{
     position: absolute;
     width: 100%;
+    padding-top: 3%;
     display: flex;
     justify-content: center;
     bottom: 0;
     background-color: #050416;
     color: white;
 }
+
+@media screen and (min-width: 1020px){
+    #div2{
+        width: 30%;
+        height: 35%;
+        padding: 5% 5%;
+    }
+    video{
+   transform: scale(3,3) translatey(90px);
+    }
+    nav ul li{
+        margin-right: 100px;
+    }
+    footer p{
+        font-size: 25px;
+        word-spacing: 10px;
+    }
+}
+
+@media screen and (orientation: portrait) and (min-width: 600px) and (max-width: 1023px) {
+    #div2{
+        width: 30%;
+        height: 30%;
+        padding: 5% 5%;
+    }
+    video{
+        transform: scale(2, 2);
+    }
+
+}
+
+@media screen and (orientation: landscape) and (min-width: 600px) and (max-width: 1023px) {
+    body{
+        height: 150vh;
+    }
+    #main{
+        height: 100%;
+    }
+    #div2{
+        margin-top: 0;
+        margin-bottom: 5%;
+        width: 30%;
+        height: 40%;
+        padding: 5% 5%;
+        overflow: scroll;
+    }
+    h1{
+        top: 3%;
+    }
+    video{
+        transform: scale(5, 5) translatey(5%);
+    }
+    }
+
+@media screen and (min-width: 400px) and (max-width:600px) and (orientation: portrait){
+    video{
+        transform: scale(1.2,1.2);
+    }
+}
+
