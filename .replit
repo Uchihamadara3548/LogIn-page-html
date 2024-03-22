@@ -1,1 +1,8 @@
+run = ["python-3.10:v25-create-account.html"]
+
+[[ports]]
+localPort = 8000
+externalPort = 80
+
+
 
