@@ -8,31 +8,44 @@
     <script src="script.js"></script>
 </head>
 <body>
+    <!-- Main container for the entire page -->
     <div id="main">
+        <!-- Navigation section -->
         <nav>
-        <ul>
-    <li><a href="#">Home</a></li>
-    <li><a href="#">About</a></li>
-  <li><a href="#">Contact</a></li>
-        </ul>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
         </nav>
-    <video  preload loop autoplay muted>
-    <source src="goku-black.mp4" type="video/mp4">
-    </video> 
-    <div id="div2">
-    <form id="f">
-    <h1>Log In</h1>
-    <input type="email" placeholder="Email" id="email">
+
+        <!-- Video section -->
+        <video preload loop autoplay muted>
+            <source src="goku-black.mp4" type="video/mp4">
+        </video> 
+
+        <!-- Form section -->
+        <div id="div2">
+            <form id="f">
+                <h1>Log In</h1>
+                <input type="email" placeholder="Email" id="email">
         <br>
     <input type="password" placeholder="password" id="password">
-        <br>
+    
+            <label>
+        <input type="checkbox" id="check" >
+        Remember me </label>
+ <a href="#" id="forgot">forgot password? </a>
+            
     <input type="submit" value="Log In">
-    </form>
-    </div>
-        
-    <footer
-        <p>&copy; 2021 All rights reserved.</p>
-    </footer>
+                
+    <p id="p">Don't have an account?        <a href="#" id="register">Register</a></p>
+            </form>
+        </div>
+        <!-- Footer section -->
+        <footer>
+            <p>&copy; 2021 All rights reserved.</p>
+        </footer>
     </div>
 </body>
 </html>
