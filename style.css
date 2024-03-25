@@ -145,6 +145,7 @@ input[type="checkbox"] {
 
 
 
+
 /* Styling for submit button */
 input[type="submit"] {
     background: #e2105b;
@@ -171,13 +172,16 @@ input[type="submit"] {
 footer {
     position: absolute;
     width: 100%;
-    padding-top: 5%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 20px;
     bottom: 0;
     background-color: #050416;
     color: white;
+}
+
+#copy{
+    font-size: 20px;
+    margin: 5px;
+    text-align: center;
 }
 
 /* Media query for large screens */
@@ -212,14 +216,26 @@ input[type="submit"]{
         margin: 10%;
         width: 15%;
         height: 25%;
-        padding: 12% 10%;
+        padding: 0 9%;
+        padding-top: 10%;
+        padding-bottom: 10%;
         overflow: scroll;
     }
-    input {
-        width: 250px;
+    input[type="email"], 
+    input[type="password"] {
+        width: 310px;
     }
+    input[type="email"]::placeholder,
+input[type="password"]::placeholder  {
+     padding: 0;
+    font-size: 20px;
+}
+   #forgot{
+     margin-right: 30px;
+   }
     input[type="submit"]{
-    width: 260px;
+    width: 330px;
+        padding: 20px;
     }
     video {
         transform: scale(3.5, 3.5) translatey(90px);
@@ -227,25 +243,45 @@ input[type="submit"]{
     nav ul li {
         margin-right: 100px;
     }
-    footer p {
-        height: 10px;
-        font-size: 10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        word-spacing: 10px;
-    }
 }
 
 /* Media query for tablets in portrait orientation */
 @media screen and (orientation: portrait) and (min-width: 600px) and (max-width: 1023px) {
+    nav ul li{
+        margin-right: 60px;
+        font-size: 20px;
+    }
     #div2 {
         width: 30%;
         height: 25%;
-        padding: 15% 10%;
+        padding: 0 10%;
+        padding-top: 15%;
+        padding-bottom: 15%;
     }
-    video {
-        transform: scale(2, 2);
+    h1{
+        font-size: 40px;
+        margin: 0;
+        margin-bottom: 10%;
+        
+    }
+    input[type="email"], 
+    input[type="password"] {
+        width: 300px;
+    }
+    input[type="email"]::placeholder,
+input[type="password"]::placeholder  {
+     padding: 0;
+    font-size: 20px;
+}
+   #forgot{
+     margin-right: 30px;
+}
+    input[type="submit"]{
+        width: 325px;
+        padding: 20px;
+    }
+    /*video {
+        transform: scale(2, 2) translatey(5%);*/
     }
 }
 
@@ -288,7 +324,9 @@ input[type="submit"]{
     input{
         width: 250px;
         margin-bottom: 10%;
-
+    }
+    input[type="submit""]{
+        width: 260px;
     }
     video {
         transform: scale(1.2, 1.2);
