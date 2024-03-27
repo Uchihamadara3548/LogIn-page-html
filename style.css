@@ -73,11 +73,11 @@ video {
     background: transparent;
     backdrop-filter: blur(5px);
     width: 70%;
-    height: 40%;
+    height: auto;
     margin: 0;
     padding: 10%;
-    padding-top: 10%;
-    padding-bottom: 15%;
+    padding-top: 5%;
+    padding-bottom: 10%;
     display: flex;
     position: absolute;
     justify-content: center;
@@ -145,7 +145,6 @@ input[type="checkbox"] {
 
 
 
-
 /* Styling for submit button */
 input[type="submit"] {
     background: #e2105b;
@@ -172,16 +171,13 @@ input[type="submit"] {
 footer {
     position: absolute;
     width: 100%;
-    padding: 20px;
+    padding-top: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     bottom: 0;
     background-color: #050416;
     color: white;
-}
-
-#copy{
-    font-size: 20px;
-    margin: 5px;
-    text-align: center;
 }
 
 /* Media query for large screens */
@@ -198,10 +194,6 @@ footer {
     input {
         width: 300px;
     }
-    #forgot{
-        font-size: 20px;
-        right: 20%;
-    }
 input[type="submit"]{
     width: 310px;
 }
@@ -213,29 +205,17 @@ input[type="submit"]{
 /* Media query for medium screens */
 @media screen and (min-width: 1024px) and (max-width: 1900px) {
     #div2 {
-        margin: 10%;
+        margin: 0;
         width: 15%;
         height: 25%;
-        padding: 0 9%;
-        padding-top: 10%;
-        padding-bottom: 10%;
+        padding: 12% 10%;
         overflow: scroll;
     }
-    input[type="email"], 
-    input[type="password"] {
-        width: 310px;
+    input {
+        width: 250px;
     }
-    input[type="email"]::placeholder,
-input[type="password"]::placeholder  {
-     padding: 0;
-    font-size: 20px;
-}
-   #forgot{
-     margin-right: 30px;
-   }
     input[type="submit"]{
-    width: 330px;
-        padding: 20px;
+    width: 260px;
     }
     video {
         transform: scale(3.5, 3.5) translatey(90px);
@@ -243,45 +223,34 @@ input[type="password"]::placeholder  {
     nav ul li {
         margin-right: 100px;
     }
+    footer p {
+        height: -10px;
+        font-size: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        word-spacing: 10px;
+    }
 }
 
 /* Media query for tablets in portrait orientation */
 @media screen and (orientation: portrait) and (min-width: 600px) and (max-width: 1023px) {
-    nav ul li{
-        margin-right: 60px;
-        font-size: 20px;
-    }
     #div2 {
         width: 30%;
-        height: 25%;
-        padding: 0 10%;
-        padding-top: 15%;
-        padding-bottom: 15%;
+        height: 20%;
+        padding: 5% 10%;
     }
-    h1{
-        font-size: 40px;
-        margin: 0;
-        margin-bottom: 10%;
-        
-    }
-    input[type="email"], 
-    input[type="password"] {
+    input{
         width: 300px;
     }
-    input[type="email"]::placeholder,
-input[type="password"]::placeholder  {
-     padding: 0;
-    font-size: 20px;
-}
-   #forgot{
-     margin-right: 30px;
-}
-    input[type="submit"]{
-        width: 325px;
-        padding: 20px;
+    #forgot{
+        margin-right: 10%;
     }
-    /*video {
-        transform: scale(2, 2) translatey(5%);*/
+    input[type="submit"]{
+        width: 320px;
+    }
+    video {
+        transform: scale(2, 2);
     }
 }
 
@@ -317,17 +286,6 @@ input[type="password"]::placeholder  {
 
 /* Media query for small screens in portrait orientation */
 @media screen and (min-width: 400px) and (max-width: 599px) and (orientation: portrait) {
-    #div2{
-        width: 50%;
-        padding: 10% 10%;
-    }
-    input{
-        width: 250px;
-        margin-bottom: 10%;
-    }
-    input[type="submit""]{
-        width: 260px;
-    }
     video {
         transform: scale(1.2, 1.2);
     }
