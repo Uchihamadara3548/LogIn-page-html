@@ -209,7 +209,7 @@ input[type="submit"]{
         width: 15%;
         height: 25%;
         padding: 12% 10%;
-        overflow: scroll;
+        overflow: hidden;
     }
     input {
         width: 250px;
@@ -223,8 +223,12 @@ input[type="submit"]{
     nav ul li {
         margin-right: 100px;
     }
+
+    footer{
+        height: 10%;
+    }
     footer p {
-        height: -10px;
+        height: -5px;
         font-size: 10px;
         display: flex;
         justify-content: center;
