@@ -1,42 +1,36 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+  // Database connection details
+  $servername = "localhost";
+  $username = "your_username";
+  $password = "your_password";
+  $dbname = "mydatabase";
 
-// Path to your SQLite database file
-$db = new SQLite3('/storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/LogIn-pagehtml/user.db');
+  // Create connection
+  $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check if connection is successful
-if (!$db) {
-    die("Connection failed: " . $db->lastErrorMsg());
-}
+  // Check connection
+  if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+  }
 
-// Receive data from POST request
-$username = $_POST['username'];
-$password = $_POST['password'];
+  // Check if form is submitted
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST["username"];
+    $password = $_POST["password"];
 
-// Prepare statement to fetch user data
-$stmt = $db->prepare('SELECT * FROM users WHERE username = :username');
-$stmt->bindValue(':username', $username, SQLITE3_TEXT);
+    // Prepare SQL statement
+    $sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
+    $result = $conn->query($sql);
 
-// Execute statement and get the result
-$result = $stmt->execute();
-$user = $result->fetchArray(SQLITE3_ASSOC);
+    if ($result->num_rows > 0) {
+      // Login successful
+      // Redirect to welcome page or perform other actions
+      header("Location: Final_Page/final.html");
+    } else {
+      // Login failed
+      echo "Invalid username or password";
+    }
+  }
 
-// Verify password and check if user exists
-if ($user && password_verify($password, $user['password_hash'])) {
-    // Start a session and set session variables if needed
-    session_start();
-    $_SESSION['user_id'] = $user['id'];
-    $_SESSION['username'] = $user['username'];
-
-    // Redirect to the final page
-    header('Location: Final_Page/final.html');
-    exit();
-} else {
-    echo "Invalid username or password.";
-}
-
-// Close database connection
-$db->close();
+  $conn->close();
 ?>

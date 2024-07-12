@@ -1,42 +1,28 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+  // Include database connection file
+  include 'database.php';
 
-// Path to your SQLite database file
-$db = new SQLite3('user.db');
+  // Check if form is submitted
+  if (isset($_POST['submit'])) {
+    // Get form data
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
-// Check if connection is successful
-if (!$db) {
-    die("Connection failed: " . $db->lastErrorMsg());
-}
+    // Hash the password
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-// Receive data from POST request
-$username = $_POST['username'];
-$email = $_POST['email'];
-$password = $_POST['password'];
+    // Prepare and execute SQL statement to insert user data
+    $sql = "INSERT INTO users (username, password) VALUES ('$username', '$hashed_password')";
 
-// Hash password (use bcrypt or another strong hashing algorithm)
-$password_hash = password_hash($password, PASSWORD_DEFAULT);
+    if (mysqli_query($conn, $sql)) {
+      // Registration successful
+      echo "Registration successful!";
+    } else {
+      // Error inserting data
+      echo "Error: " . mysqli_error($conn);
+    }
 
-// Prepare statement to insert data
-$stmt = $db->prepare('INSERT INTO users (username, email, password_hash) VALUES (:username, :email, :password)');
-$stmt->bindValue(':username', $username, SQLITE3_TEXT);
-$stmt->bindValue(':email', $email, SQLITE3_TEXT);
-$stmt->bindValue(':password', $password_hash, SQLITE3_TEXT);
-
-// Execute statement
-$result = $stmt->execute();
-
-// Check if insertion was successful
-if ($result) {
-    // Redirect to login form after successful registration
-    header('Location: login.html');
-    exit();
-} else {
-    echo "Registration failed: " . $db->lastErrorMsg();
-}
-
-// Close database connection
-$db->close();
+    // Close the database connection
+    mysqli_close($conn);
+  }
 ?>
