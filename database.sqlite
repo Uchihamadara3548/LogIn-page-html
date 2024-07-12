@@ -1,0 +1,61 @@
+import sqlite3
+
+# Connect to the SQLite database (or create it if it doesn't exist)
+conn = sqlite3.connect('database.db')
+
+# Create a cursor object to interact with the database
+cursor = conn.cursor()
+
+# Create a table for registering IDs
+cursor.execute('''
+CREATE TABLE IF NOT EXISTS register (
+    id INTEGER PRIMARY KEY,
+    name TEXT NOT NULL,
+    email TEXT NOT NULL UNIQUE
+)
+''')
+
+# Function to insert a new ID into the register table
+def register_id(name, email):
+    try:
+        cursor.execute('''
+        INSERT INTO register (name, email)
+        VALUES (?, ?)
+        ''', (name, email))
+        conn.commit()
+        print("Registration successful!")
+    except sqlite3.IntegrityError:
+        print("Error: Email already exists.")
+
+# Function to query all IDs from the register table
+def query_all_ids():
+    cursor.execute('SELECT * FROM register')
+    rows = cursor.fetchall()
+    for row in rows:
+        print(row)
+
+# Function to query a specific ID by email
+def query_id_by_email(email):
+    cursor.execute('SELECT * FROM register WHERE email = ?', (email,))
+    row = cursor.fetchone()
+    if row:
+        print(row)
+    else:
+        print("No entry found with that email.")
+
+# Example usage
+if __name__ == "__main__":
+    # Register new IDs
+    register_id('John Doe', 'john.doe@example.com')
+    register_id('Jane Smith', 'jane.smith@example.com')
+    
+    # Query all IDs
+    print("All registered IDs:")
+    query_all_ids()
+
+    # Query a specific ID by email
+    print("Query by email:")
+    query_id_by_email('john.doe@example.com')
+
+# Close the database connection
+conn.close()
