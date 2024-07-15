@@ -1,0 +1,389 @@
+/*paddil styling for each elements*/
+
+*{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+/* Overall styling for the body */
+body {
+    margin: 0;
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: scroll; /* Allow scrolling */
+}
+
+/* Styling for the main container */
+#main {
+    margin: 0;
+    top: 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Styling for the navigation */
+nav {
+    background-color: #050416;
+    display: flex;
+    justify-content: right;
+    position: absolute;
+    width: 100%;
+    margin: 0;
+    top: 0;
+    overflow: hidden;
+}
+
+/* Styling for navigation list items */
+nav ul li {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-right: 20px;
+    list-style: none;
+    display: inline-block;
+}
+
+/* Styling for navigation links */
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.fa-xmark{
+   position: absolute;
+   color: white;   
+   transform: translatex(-10px);
+   font-size: 20px;
+   top: 16px;
+   margin-right: 25px;
+}
+
+#cross, #cross1, #cross2{
+   display: none;
+}
+
+/* nav icons */
+  .fa-envelope, .fa-house, .fa-circle-info{
+     color: white;
+  }
+
+         /* contact options*/
+         
+     #contact-container{
+        border: 2px solid white;     
+    border-radius: 15px;
+    background: transparent;
+    backdrop-filter: blur(5px);
+    width: 70%;
+    height: auto;
+    margin: 50% 50%;  
+    padding: 5%;   
+    padding-top: 10%;
+    padding-bottom: 10%;
+    display: block;
+    position: absolute;         
+    overflow: hidden;
+     }
+     
+     #h1{
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        margin-top: 0;
+        font-size: 20px;
+        margin-bottom: 10%;
+     }
+     
+  #ca{
+     color: white;
+     text-decoration: none;
+  }
+     
+     #gmail, #instagram, #facebook, #github{
+        padding-bottom: 30px;            
+        margin-right: 15px;
+        margin-left: 15px;
+        font-size: 30px;
+     }
+     
+     .cl{
+        color: white;               
+        font-size: 15px;
+     }
+
+/* Styling for video element */
+video {
+    position: absolute;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transform: translatey(-1.9%) scale(1.2, 1.2); /* Adjust size and position */
+    overflow: hidden;
+    z-index: -1;
+}
+
+/* Styling for the main content div */
+#div2, #div3{
+    border: 2px solid white;
+    border-radius: 15px;
+    background: transparent;
+    backdrop-filter: blur(5px);
+    width: 70%;
+    height: auto;
+    margin: 0;
+    padding: 10%;
+    padding-top: 5%;
+    padding-bottom: 10%;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Styling for headings */
+h1 {
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-top: 10%;
+    text-align: center;
+}
+
+/* Styling for input fields */
+input {
+    margin: 0 auto;
+    background: transparent;
+    color: white;
+    width: 250px;
+    border: none;
+    border-bottom: 2px solid white;
+    margin-bottom: 15%;
+    padding: 10px;
+}
+
+input:focus{
+    outline: none;
+}
+
+/* Styling for input placeholder text */
+input[type="username"]::placeholder, 
+input[type="email"]::placeholder,
+input[type="password"]::placeholder, 
+input[type="text"]::placeholder{
+    color: white;
+    font-size: 17px;
+}
+
+/* Styling label for "Remember me" */
+label {
+    color: white;
+    margin-right: 5px;
+    font-size: 15px;
+ /* Adjust this value as (needed) */
+}
+
+/* Add to your existing CSS */
+.password-container{
+    position: relative;
+    display: inline-block;
+    width: 110%;
+}
+
+.register-password-container, .confirm-password-container{
+   position: relative;
+    display: inline-block;
+    width: 100%;
+} 
+
+
+.password-container .fa-eye, .fa-eye-slash{
+    position: absolute;
+    right: 12px; /* Adjust this value to position the icon inside the input */
+    top: 10px;    
+    cursor: pointer;
+    color: white;
+}
+
+.register-password-container .fa-eye, .fa-eye-slash,
+.confirm-password-container .fa-eye, .fa-eye-slash{
+   position: absolute;
+    right: 10px; /* Adjust this value to position the icon inside the input */
+    top: 10px;    
+    cursor: pointer;
+    color: white;
+}
+
+/* Styling checkbox */
+input[type="checkbox"] {
+    width: unset;
+    height: unset;
+    left: -50px;
+    margin-right: 10px;
+    margin-bottom: 10%;
+}
+/* Adjust this value to move the checkbox*/
+    
+#forgot{
+    text-decoration: none;
+    color: blue;
+    position: absolute;
+    right: 3%;
+    display: inline;
+}
+
+
+
+/* Styling for submit button */
+input[type="submit"] {
+    background: #e2105b;
+    color: white;
+    width: 260px;
+    margin-bottom: 3%;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#p{
+    color: white;
+    text-align: center;
+}
+
+#show-register, #show-login{
+    text-decoration: none;
+    color: blue;
+}
+
+/* Styling for footer */
+footer {
+    position: absolute;
+    width: 100%;
+    padding-top: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    background-color: #050416;
+    color: white;
+}
+
+/* Media query for large screens */
+@media screen and (min-width: 1901px) {
+    nav ul li {
+        margin-right: 100px;
+        font-size: 30px;
+    }
+    #div2 {
+        width: 10%;
+        height: 10%;
+        padding: 5% 5%;
+    }
+    input {
+        width: 300px;
+    }
+input[type="submit"]{
+    width: 310px;
+}
+    video {
+        transform: translatey(50%) scale(4, 4);
+    }
+}
+
+/* Media query for medium screens */
+@media screen and (min-width: 1024px) and (max-width: 1900px) {
+    #div2 {
+        margin: 0;
+        width: 15%;
+        height: 25%;
+        padding: 12% 10%;
+        overflow: hidden;
+    }
+    input {
+        width: 250px;
+    }
+    input[type="submit"]{
+    width: 260px;
+    }
+    video {
+        transform: scale(3.5, 3.5) translatey(90px);
+    }
+    nav ul li {
+        margin-right: 100px;
+    }
+
+    footer{
+        height: 10%;
+    }
+    footer p {
+        height: -5px;
+        font-size: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        word-spacing: 10px;
+    }
+}
+
+/* Media query for tablets in portrait orientation */
+@media screen and (orientation: portrait) and (min-width: 600px) and (max-width: 1023px) {
+    #div2 {
+        width: 30%;
+        height: 20%;
+        padding: 5% 10%;
+    }
+    input{
+        width: 300px;
+    }
+    #forgot{
+        margin-right: 10%;
+    }
+    input[type="submit"]{
+        width: 320px;
+    }
+    video {
+        transform: scale(2, 2);
+    }
+}
+
+/* Media query for tablets in landscape orientation */
+@media screen and (orientation: landscape) and (min-width: 600px) and (max-width: 1023px) {
+    body {
+        height: 200vh;
+    }
+    #main {
+        height: 100%;
+    }
+    #div2 {
+        margin: 50%;
+        width: 30%;
+        height: 45%;
+        padding: 10%;
+        padding-top: 10%;
+        overflow: scroll;
+    }
+    h1 {
+        top: 3%;
+    }
+    input{
+        width: 300px;
+    }
+    input[type="submit"]{
+        width: 310px;
+    }
+    video {
+        transform: scale(5, 5) translatey(5%);
+    }
+}
+
+/* Media query for small screens in portrait orientation */
+@media screen and (min-width: 400px) and (max-width: 599px) and (orientation: portrait) {
+    video {
+        transform: scale(1.2, 1.2);
+    }
+}
