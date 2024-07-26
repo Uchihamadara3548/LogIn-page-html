@@ -6,6 +6,11 @@ const loadDatabase = async () => {
     try {
         // Initialize SQL.js with the correct file location
         const SQL = await initSqlJs({ locateFile: file => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.6.2/${file}` });
+
+         // Load the existing database file
+    const response = await fetch('database.db');
+    const data = await response.arrayBuffer();
+    db = new SQL.Database(new Uint8Array(data));
         
         // Create a new database instance
         db = new SQL.Database();
@@ -14,8 +19,8 @@ const loadDatabase = async () => {
         db.run(`
             CREATE TABLE IF NOT EXISTS users (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
-                username TEXT UNIQUE,
-                password TEXT
+                username TEXT UNIQUE NOT NULL,
+        password TEXT NOT NULL
             );
         `);
         
@@ -71,6 +76,7 @@ const insertUser = async (username, password) => {
         db.run('BEGIN TRANSACTION');
         
         // Insert user into the database
+        // Use placeholder '?' for the values
         db.run('INSERT INTO users (username, password) VALUES (?, ?)', [username, password]);
         
         // Commit transaction if successful
@@ -80,9 +86,6 @@ const insertUser = async (username, password) => {
         return 'Registration successful!';
     } catch (error) {
         console.error('Error inserting user:', error);
-        
-        // Rollback transaction on error
-        db.run('ROLLBACK');
         
         return 'Registration failed.';
     }
@@ -118,5 +121,4 @@ document.addEventListener('DOMContentLoaded', () => {
     loadDatabase().catch(error => {
         console.error('Error loading database on DOMContentLoaded:', error);
     });
-});
-
+})
