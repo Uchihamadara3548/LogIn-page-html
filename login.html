@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Log In</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.6.2/sql-wasm.js" integrity="sha512-L6uhvfNcUH0q/Y1IWnX/IlweC3hvYNIwSsvwWL2b2V7692tnGPxQwwDEpR8kFnUa0VSSNalR3FnEF4gr4jti+A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="sql.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- Main container for the entire page -->
+    <div id="main">
+        <!-- Navigation section -->
+        <nav>
+            <ul>
+                <li><a href="Madaraquotes/index.html" target="_blank"><i class="fa-solid fa-house" id="home"></i></a></li>
+                <li><i class="fa-solid fa-envelope" id="contacts"></i><i class="fa-solid fa-xmark" id="cross1"></i></li>
+                <li><i class="fa-solid fa-circle-info" id="about"></i><i class="fa-solid fa-xmark" id="cross2"></i></li>
+            </ul>
+        </nav>
+
+        <!-- Contact section -->
+        <div id="contact-container" style="display: none;">
+            <h1>Contact Us</h1>
+            <label><i class="fa-solid fa-envelope" id="gmail"></i><strong>bbbadboys33@gmail.com</strong></label><br>
+            <a href="https://www.instagram.com/uchiha_madara_3548?igsh=MTRmbXdybzB2YW5ncA==" target="_blank" id="ca">
+                <label class="cl"><i class="fa-brands fa-instagram" id="instagram"></i><strong>UCHIHA_MADARA_3548</strong></label>
+            </a><br>
+            <label class="cl"><i class="fa-brands fa-facebook" id="facebook"></i><strong>UCHIHA MADARA</strong></label><br>
+            <a href="https://github.com/Uchihamadara3548?tab=repositories" target="_blank" id="ca">
+                <label class="cl"><i class="fa-brands fa-github" id="github"></i><strong>UCHIHA_MADARA_3548</strong></label>
+            </a>
+        </div>
+
+        <!-- Video section -->
+        <video preload loop autoplay muted>
+            <source src="Assets/goku-black.mp4" type="video/mp4">
+        </video>
+
+        <!-- Login form section -->
+        <div id="div2" style="display: none;">
+            <form id="login-form">
+                <h1>Log In</h1>
+                <input type="text" name="username" placeholder="Username" id="username" required><br>
+                <div class="password-container">
+                    <i class="fa-solid fa-eye" id="eye"></i>
+                    <i class="fa-solid fa-eye-slash" style="display: none;" id="eye-slash"></i>
+                    <input type="password" name="password" placeholder="Password" id="password" required>
+                </div>
+                <label>
+                    <input type="checkbox" id="check"> Remember me
+                </label>
+                <a href="#" id="forgot">Forgot password?</a>
+                <input type="submit" value="Log In" id="login">
+                <p>Don't have an account? <a href="#" id="show-register">Register</a></p>
+            </form>
+        </div>
+
+        <!-- Registration form section -->
+        <div id="div3">
+            <form id="register-form">
+                <h1>Register</h1>
+                <input type="text" name="username" placeholder="Username" id="register_username" required><br>
+                <div class="password-container">
+                    <i class="fa-solid fa-eye" id="eye1"></i>
+                    <i class="fa-solid fa-eye-slash" style="display: none;" id="eye-slash1"></i>
+                    <input type="password" name="password" placeholder="Password" id="register_password" required>
+                </div>
+                <div class="password-container">
+                    <i class="fa-solid fa-eye" id="eye2"></i>
+                    <i class="fa-solid fa-eye-slash" style="display: none;" id="eye-slash2"></i>
+                    <input type="password" placeholder="Confirm Password" id="confirm_password" required>
+                </div>
+                <label>
+                    <input type="checkbox" id="check"> Remember me
+                </label>
+                <input type="submit" value="Register" id="register">
+                <p>Already have an account? <a href="#" id="show-login">Log In</a></p>
+            </form>
+        </div>
+
+        <!-- Footer section -->
+        <footer>
+            <p>&copy; 2025 All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
