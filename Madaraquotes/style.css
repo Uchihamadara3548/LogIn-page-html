@@ -1,0 +1,228 @@
+*{
+    font-family: 'Bebas Neue', cursive;
+}
+
+body{
+  background-color: black;
+  color: white;
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+    margin-top: 5%;
+}
+
+.madarauchiha::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    background-image: url('Madara.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 0;
+    transform: translatex(90px);
+    z-index: -1;
+}
+
+
+.madarauchiha{
+    margin: 0;
+}
+
+.container1{
+    padding: 5%;
+    margin: 0 auto;
+}
+
+
+.wiki{
+    text-align: justify;
+}
+
+#quotes{
+    font-size: 30px;
+}
+
+.container3{
+    width: 70%;
+    margin: 10px;
+}
+
+.quote1{
+    text-align: left;
+}
+
+.container4{
+  background-color: black;
+    border-radius: 6px;
+    position: relative;
+    width: 250px;
+    height: auto;
+    margin: 0 auto;
+    padding: 5%;
+}
+
+  .container4::before {
+    content: "";
+    width: 104%;
+    height: 105%;
+    border-radius: 6px;
+    background-image: linear-gradient(#5ddcff, #3c67e3 43%, #4e00c2);
+    position: absolute;
+    z-index: -1;
+    top: -2%;
+    left: -2%;
+    opacity: 1;
+    animation: gradient 1s linear infinite;
+}
+
+.quote1-0{
+    text-align: justify;
+    font-size: 20px;
+    word-spacing: 5px;
+}
+
+#play1{
+    transform: translatex(60px) translatey(6px);
+    color: silver;
+    position: absolute;
+    font-size: 20px;
+    z-index: 2;
+}
+
+#pause1{
+    transform: translatex(60px) translatey(6px);
+    color: white;
+    position: absolute;
+    font-size: 20px;
+    z-index: 1;
+    
+}
+
+#download1{
+    transform: translatex(100px) translatey(5px);
+    color: silver;
+    position: absolute;
+    font-size: 20px;
+}
+
+.container5{
+    width: 40%;
+    margin: 10px;
+}
+
+.quote2{
+    text-align: left;
+    font-size: 25px;
+    word-spacing: 5px;
+    letter-spacing: 5px;
+}
+
+.container6{
+    background-color: black;
+    border-radius: 6px;
+    position: relative;
+    width: 250px;
+    height: auto;
+    margin: 0 auto;
+    padding: 5%;
+}
+
+
+.container6::before {
+    content: "";
+    width: 104%;
+    height: 105%;
+    border-radius: 8px;
+    background-image: linear-gradient(#5ddcff, #3c67e3 43%, #4e00c2);
+    position: absolute;
+    z-index: -1;
+    top: -2%;
+    left: -2%;
+    opacity: 1;
+    animation: gradient 1s linear infinite;
+}
+
+.quote2-0{
+    text-align: justify;
+    font-size: 20px;
+    word-spacing: 10px;
+}
+
+#play2{
+    transform: translatex(60px) translatey(-8px);
+    color: silver;
+    position: absolute;
+    font-size: 20px;
+    z-index: 2;
+}
+
+#pause2{
+    transform: translatex(60px) translatey(-8px);
+    color: white;
+    position: absolute;
+    font-size: 20px;
+    z-index: 1;
+    
+}
+
+#download2{
+    transform: translatex(100px) translatey(-8px);
+    color: silver;
+    position: absolute;
+    font-size: 20px;
+}
+
+footer{
+    margin-top: 10%;
+    padding: 5%;
+    text-align: center;
+}
+
+#link{
+    font-size: 20px;
+}
+
+#sourcecode{
+    text-decoration: none;
+    color: blue;
+    font-size: 20px;
+}
+
+
+@keyframes gradient {
+  0% {
+    background: linear-gradient(0deg, #5ddcff, #3c67e3 43%, #4e00c2);
+  }
+  10% {
+    background: linear-gradient(36deg, #5ddcff, #3c67e3 43%, #4e00c2);
+  }
+  20% {
+    background: linear-gradient(72deg, #5ddcff, #3c67e3 43%, #4e00c2);
+  }
+  30% {
+    background: linear-gradient(108deg, #5ddcff, #3c67e3 43%, #4e00c2);
+  }
+  40% {
+    background: linear-gradient(144deg, #5ddcff, #3c67e3 43%, #4e00c2);
+  }
+  50% {
+    background: linear-gradient(180deg, #5ddcff, #3c67e3 43%, #4e00c2);
+  }
+  60% {
+    background: linear-gradient(216deg, #5ddcff, #3c67e3 43%, #4e00c2);
+  }
+  70% {
+    background: linear-gradient(252deg, #5ddcff, #3c67e3 43%, #4e00c2);
+  }
+  80% {
+    background: linear-gradient(288deg, #5ddcff, #3c67e3 43%, #4e00c2);
+  }
+  90% {
+    background: linear-gradient(324deg, #5ddcff, #3c67e3 43%, #4e00c2);
+  }
+  100% {
+    background: linear-gradient(360deg, #5ddcff, #3c67e3 43%, #4e00c2);
+  }
+}
